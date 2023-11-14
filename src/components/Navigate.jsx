@@ -14,10 +14,9 @@ const Navigation = () => {
     }
     return (<>
         {authenticated ? (
-            <>
-                {/* <NavLink to={'./contact'}>Contacts</NavLink> */}
+            <div>
                 <button onClick={onLogout}>Log Out</button>
-            </>) : (<><NavLink to='/login'><button>login</button></NavLink>
+            </div>) : (<><NavLink to='/login'><button>login</button></NavLink>
                 <NavLink to='/register'><button>register</button></NavLink></>)}
 
 
