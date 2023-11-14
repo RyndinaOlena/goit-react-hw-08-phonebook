@@ -5,7 +5,7 @@ import Navigation from "./Navigate";
 import Contacts from "./Contacts";
 import { useDispatch } from 'react-redux'
 import { refreshThunk } from "redux/authRedusers";
-import RestriftedRoute from "./RestrictedRoute";
+import RestrictedRoute from "./RestritedRoute";
 import PrivedRoute from "./PrivedRoute";
 
 const LoginPage = lazy(() => import('./LoginPage'))
@@ -24,8 +24,8 @@ export const App = () => {
       <Suspense fallback={<div>Loader...</div>}>
         <Routes>
           <Route path='/' element={<LoginPage />} />
-          <Route path='/login' element={<RestriftedRoute><LoginPage /></RestriftedRoute>} />
-          <Route path='/register' element={<RestriftedRoute><RegisterPage /></RestriftedRoute>} />
+          <Route path='/login' element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
+          <Route path='/register' element={<RestrictedRoute><RegisterPage /></RestrictedRoute>} />
           <Route path="/contact" element={<PrivedRoute><Contacts /></PrivedRoute>} />
         </Routes>
       </Suspense></>
