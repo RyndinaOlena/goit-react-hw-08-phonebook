@@ -17,22 +17,6 @@ const RegisterPage = lazy(() => import('./RegisterPage'))
 
 
 export const App = () => {
-  // const basicBoxStyles = {
-  //   // display: 'flex',
-  //   margin: 'auto',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   textAlign: 'center',
-  //   boxSize: '600px',
-  //   heith: '00px',
-  //   color: 'white',
-  //   textShadow: '0 0 20px black',
-  //   fontWeight: 'bold',
-  //   fontSize: '20px',
-  //   px: 4,
-  //   background:
-  //     'url(https://picsum.photos/id/1080/200/300) center/cover no-repeat',
-  // }
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -41,11 +25,7 @@ export const App = () => {
 
 
   return (
-    <Box
-    // sx={basicBoxStyles} filter='auto'
-    // w="200" h="500" bgGradient="linear(to-t, green.200, pink.500)" textAlign={'center'}
-    >
-
+    <Box>
       <Navigation />
       <Suspense fallback={<div>Loader...</div>}>
         <Routes>
@@ -55,7 +35,5 @@ export const App = () => {
           <Route path="/contact" element={<PrivedRoute><Contacts /></PrivedRoute>} />
         </Routes>
       </Suspense></Box>
-
-
   );
 };

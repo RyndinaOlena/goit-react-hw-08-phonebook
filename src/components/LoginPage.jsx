@@ -7,7 +7,6 @@ import { Box, Button, Input, Text } from '@chakra-ui/react';
 
 const LoginPage = () => {
     const basicBoxStyles = {
-        // display: 'flex',
         paddingTop: '50px',
         margin: 'auto',
         alignItems: 'center',

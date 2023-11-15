@@ -6,12 +6,6 @@ import { Box } from '@chakra-ui/react'
 
 const Contacts = () => {
     const basicBoxStyles = {
-        // display: 'flex',
-        // paddingTop: '50px',
-        // margin: 'auto',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // textAlign: 'center',
         boxSize: '400',
         heith: '00px',
         color: 'white',

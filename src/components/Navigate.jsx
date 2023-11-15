@@ -9,15 +9,12 @@ import { Box, Button, } from '@chakra-ui/react'
 
 const Navigation = () => {
     const basicBoxStyles = {
-        // display: 'flex',
         paddingTop: '50px',
         margin: 'auto',
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-
         color: 'white',
-        // textShadow: '0 0 20px black',
         fontWeight: 'bold',
         fontSize: '20px',
         px: 4,
