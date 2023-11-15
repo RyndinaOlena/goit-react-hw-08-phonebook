@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form';
 import { registerThuk } from 'redux/authRedusers';
-import { Box, Button, FormControl, FormHelperText, Input, Text } from '@chakra-ui/react';
+import { Box, Button, FormHelperText, Input, Text } from '@chakra-ui/react';
 
 
 
