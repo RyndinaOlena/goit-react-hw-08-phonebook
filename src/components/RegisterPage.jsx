@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form';
 import { registerThuk } from 'redux/authRedusers';
-import { Box, Button, FormControl, FormErrorIcon, FormHelperText, FormLabel, Input, Text } from '@chakra-ui/react';
-import { Form } from 'react-router-dom';
+import { Box, Button, FormControl, FormHelperText, Input, Text } from '@chakra-ui/react';
+
 
 const RegisterPage = () => {
 
