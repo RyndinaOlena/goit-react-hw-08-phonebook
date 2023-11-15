@@ -2,10 +2,27 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { loginThunk } from 'redux/authRedusers'
-import { Button, Input, Text } from '@chakra-ui/react';
+import { Box, Button, Input, Text } from '@chakra-ui/react';
 
 
 const LoginPage = () => {
+    const basicBoxStyles = {
+        // display: 'flex',
+        paddingTop: '50px',
+        margin: 'auto',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        boxSize: '400px',
+        heith: '00px',
+        color: 'white',
+        textShadow: '0 0 20px black',
+        fontWeight: 'bold',
+        fontSize: '20px',
+        px: 4,
+        background:
+            'url(https://picsum.photos/id/1080/200/300) center/cover no-repeat',
+    }
     const {
         register,
         handleSubmit,
@@ -21,7 +38,7 @@ const LoginPage = () => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Box sx={basicBoxStyles} filter='auto'><form onSubmit={handleSubmit(onSubmit)}>
             <label>
                 <Text m={2} >email</Text>
                 <Input
@@ -45,8 +62,9 @@ const LoginPage = () => {
                 {errors.password && <span> This field is required </span>}
             </label>
 
-            <Button display={'block'} ml={4} mt={2} type='submit'>Sign in</Button>
-        </form>
+            <Button position={'absolute'} margin={'5'} ml={'150'} display={'block'} type="submit" borderTopRadius="md" >Sign in</Button>
+        </form></Box>
+
     )
 }
 
