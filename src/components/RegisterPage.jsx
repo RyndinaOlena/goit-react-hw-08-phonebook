@@ -4,6 +4,7 @@ import { registerThuk } from 'redux/authRedusers';
 import { Box, Button, FormControl, FormHelperText, Input, Text } from '@chakra-ui/react';
 
 
+
 const RegisterPage = () => {
 
     const basicBoxStyles = {
@@ -39,8 +40,9 @@ const RegisterPage = () => {
 
 
     return (
-        <Box textAlign={'center'} sx={basicBoxStyles} filter='auto'>
-            <FormControl onSubmit={handleSubmit(onSubmit)}>
+
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <Box textAlign={'center'} sx={basicBoxStyles} filter='auto'>
                 <label>
                     <Text m={2}>Email:</Text>
                     <Input
@@ -80,7 +82,7 @@ const RegisterPage = () => {
                         size="md"
                         width="240px"
                         variant="filled"
-                        placeholder='name'
+                        placeholder='password'
                         {...register('password', { required: true })}
                         type="password"
                     />
@@ -90,8 +92,9 @@ const RegisterPage = () => {
                 <Button position={'absolute'} margin={'5'} ml={'150'} display={'block'} type="submit" borderTopRadius="md">
                     Sign Up
                 </Button>
-            </FormControl>
-        </Box>
+            </Box>
+        </form>
+
     )
 }
 
