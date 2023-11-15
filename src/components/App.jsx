@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux'
 import { refreshThunk } from "redux/authRedusers";
 import RestrictedRoute from "./RestritedRoute";
 import PrivedRoute from "./PrivedRoute";
+import { Box } from "@chakra-ui/react";
+
 
 const LoginPage = lazy(() => import('./LoginPage'))
 const RegisterPage = lazy(() => import('./RegisterPage'))
@@ -15,12 +17,15 @@ const RegisterPage = lazy(() => import('./RegisterPage'))
 
 
 export const App = () => {
+
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(refreshThunk())
   }, [dispatch])
   return (
-    <><Navigation />
+    <Box  >
+
+      <Navigation />
       <Suspense fallback={<div>Loader...</div>}>
         <Routes>
           <Route path='/' element={<LoginPage />} />
@@ -28,7 +33,7 @@ export const App = () => {
           <Route path='/register' element={<RestrictedRoute><RegisterPage /></RestrictedRoute>} />
           <Route path="/contact" element={<PrivedRoute><Contacts /></PrivedRoute>} />
         </Routes>
-      </Suspense></>
+      </Suspense></Box>
 
 
   );

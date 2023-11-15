@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { addContact, fetchContacts } from 'redux/phoneBookReduser'
 import css from './style.module.css'
+import { Button, Input, Text } from '@chakra-ui/react'
 const Form = () => {
     const dispatch = useDispatch()
 
@@ -24,20 +25,28 @@ const Form = () => {
         event.currentTarget.reset();
     }
     return (
-        <div> <h2>Phonebook</h2>
+        <div> <Text m={4} fontSize='4xl' fontWeight={700}>Phonebook</Text>
             <form onSubmit={handleAddContact}>
                 <label>
-                    <span>Name</span>
-                    <input className={css.list} type="text" name="name" />
+                    <Text>Name</Text>
+                    <Input
+                        size="md"
+                        width="240px"
+                        variant="filled"
+                        className={css.list} type="text" name="name" />
                 </label>
                 <label>
-                    <span>Number</span>
-                    <input className={css.list} type="tel" name="number" required />
+                    <Text>Number</Text>
+                    <Input
+                        size="md"
+                        width="240px"
+                        variant="filled"
+                        className={css.list} type="tel" name="number" required />
                 </label>
-                <button className={css.btnAdd} type='submit'>Add contact</button>
+                <Button className={css.btnAdd} type='submit'>Add contact</Button>
             </form>
 
-        </div>
+        </div >
     )
 }
 

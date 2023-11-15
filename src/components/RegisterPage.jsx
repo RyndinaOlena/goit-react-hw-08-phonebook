@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form';
 import { registerThuk } from 'redux/authRedusers';
-import { FormHelperText, FormLabel, Input } from '@chakra-ui/react';
+import { Button, FormHelperText, FormLabel, Input } from '@chakra-ui/react';
 
 const RegisterPage = () => {
     const {
@@ -23,11 +23,15 @@ const RegisterPage = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
             <label>
-                <FormLabel>Email:</FormLabel>
+                <FormLabel m={2}>Email:</FormLabel>
                 <Input
+                    focusBorderColor='gray.400'
+                    cursor={'pointer'}
                     size="md"
                     width="240px"
                     variant="filled"
+
+                    placeholder='email'
                     {...register('email', { required: true })}
                     type="email"
                 />
@@ -38,9 +42,12 @@ const RegisterPage = () => {
             <label>
                 <FormLabel>Name:</FormLabel>
                 <Input
+                    focusBorderColor='gray.400'
+                    cursor={'pointer'}
                     size="md"
                     width="240px"
                     variant="filled"
+                    placeholder='name'
                     {...register('name', { required: true })}
                     type="text"
                 />
@@ -49,18 +56,21 @@ const RegisterPage = () => {
             <label>
                 <FormLabel>Password:</FormLabel>
                 <Input
+                    focusBorderColor='gray.400'
+                    cursor={'pointer'}
                     size="md"
                     width="240px"
                     variant="filled"
+                    placeholder='name'
                     {...register('password', { required: true })}
                     type="password"
                 />
                 {errors.password && <span>This field is required</span>}
             </label>
 
-            <button type="submit">
+            <Button display={'block'} ml={4} mt={2} type="submit" borderTopRadius="md">
                 Sign Up
-            </button>
+            </Button>
         </form>
     )
 }

@@ -3,6 +3,8 @@ import { useSelector } from "react-redux"
 import { selectAuthenticated } from "redux/authSelectors"
 import { useDispatch } from 'react-redux'
 import { requestLogOutThuk } from "redux/authRedusers"
+import { Button, } from '@chakra-ui/react'
+
 
 
 const Navigation = () => {
@@ -14,10 +16,10 @@ const Navigation = () => {
     }
     return (<>
         {authenticated ? (
-            <div>
-                <button onClick={onLogout}>Log Out</button>
-            </div>) : (<><NavLink to='/login'><button>login</button></NavLink>
-                <NavLink to='/register'><button>register</button></NavLink></>)}
+            <>
+                <Button onClick={onLogout}>Log Out</Button>
+            </>) : (<><NavLink to='/login'><Button m={4}>login</Button></NavLink>
+                <NavLink to='/register'><Button>register</Button></NavLink></>)}
 
 
     </>

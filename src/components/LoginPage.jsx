@@ -2,6 +2,8 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { loginThunk } from 'redux/authRedusers'
+import { Button, Input, Text } from '@chakra-ui/react';
+
 
 const LoginPage = () => {
     const {
@@ -21,17 +23,29 @@ const LoginPage = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <label>
-                <span>email</span>
-                <input {...register("email", { required: true })} type='email' />
+                <Text m={2} >email</Text>
+                <Input
+                    focusBorderColor='gray.400'
+                    cursor={'pointer'}
+                    width='auto'
+                    variant="filled"
+                    placeholder='email'
+                    {...register("email", { required: true })} type='email' />
                 {errors.email && <span> This field is required </span>}
             </label>
             <label>
-                <span>password</span>
-                <input {...register("password", { required: true, maxLength: 8 })} type='password' />
+                <Text m={2}>password</Text>
+                <Input
+                    focusBorderColor='gray.400'
+                    cursor={'pointer'}
+                    width='auto'
+                    variant="filled"
+                    placeholder='password'
+                    {...register("password", { required: true, maxLength: 8 })} type='password' />
                 {errors.password && <span> This field is required </span>}
             </label>
 
-            <button type='submit'>Sign in</button>
+            <Button display={'block'} ml={4} mt={2} type='submit'>Sign in</Button>
         </form>
     )
 }

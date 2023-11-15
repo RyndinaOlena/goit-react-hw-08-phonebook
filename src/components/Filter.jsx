@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/phoneBookReduser';
 import { selectFilter } from 'redux/selectors';
-
+import { Input } from '@chakra-ui/react'
 export default function Filter() {
     const dispatch = useDispatch()
     const filter = useSelector(selectFilter)
@@ -15,7 +15,10 @@ export default function Filter() {
     };
 
     return (
-        <input
+        <Input
+            size="md"
+            width="240px"
+            variant="filled"
             type="text"
             value={filter}
             onChange={handleChange}
