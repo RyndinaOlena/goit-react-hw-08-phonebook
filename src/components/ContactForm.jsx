@@ -24,11 +24,12 @@ const Form = () => {
         event.currentTarget.reset();
     }
     return (
-        <div> <Text m={4} fontSize='4xl' fontWeight={700}>Phonebook</Text>
+        <div> <Text m={4} fontSize='4xl' fontWeight={600}>Phonebook</Text>
             <form onSubmit={handleAddContact}>
                 <label>
                     <Text>Name</Text>
                     <Input
+                        m={2}
                         size="md"
                         width="240px"
                         variant="filled"
@@ -37,12 +38,13 @@ const Form = () => {
                 <label>
                     <Text>Number</Text>
                     <Input
+                        m={2}
                         size="md"
                         width="240px"
                         variant="filled"
                         type="tel" name="number" required />
                 </label>
-                <Button type='submit'>Add contact</Button>
+                <Button display={'block'} color={'gray'} m={2} type='submit'>Add contact</Button>
             </form>
 
         </div >

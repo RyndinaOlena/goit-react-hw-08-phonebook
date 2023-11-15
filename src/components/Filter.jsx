@@ -16,6 +16,7 @@ export default function Filter() {
 
     return (
         <Input
+            m={2}
             size="md"
             width="240px"
             variant="filled"
